@@ -1,0 +1,39 @@
+<?php
+include("Connexion.php");
+?>
+
+<!Doctype html>
+<html>
+    <head> 
+       <meta charset = "UTF-8"/>
+       <title>  Projet </title>
+      <link rel="stylesheet" type="text/css" href="projet.css"/>
+    </head>
+    <body>
+      <h1> GUESS THE CORRELATION </h1>
+      <h2><a onclick="pseudo()"> Nouvelle partie </a></h2>
+      <h2><a href="regles.html"> Règle du jeu </a></h2>
+      
+      <?php     
+        $Pseudo = $_POST['Pseudo'];
+        $Nb_point = $_POST['Nb_point'];
+        connectMaBase();
+        $strSQL ="INSERT INTO stockage (Pseudo,Nb_point) Values('".$Pseudo."','".$Nb_point."')";
+        $strSQL ="DROP TABLE IF EXISTS classement";
+        $strSQL ="CREATE TABLE classement as
+                SELECT [ID] INT IDENTITY, A.Pseudo, A.Nb_point
+                FROM stockage as A
+                ORDER BY Nb_point ASC
+                limit 20; 
+               ";
+               
+        mysql_query($strSQL);
+      ?>
+      <script type="text/javascript">
+      function pseudo() {
+      var p;
+      p = prompt("Saisissez un pseudo");
+      }
+      </script>
+  </body>
+</html>
