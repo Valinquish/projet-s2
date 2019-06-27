@@ -1,12 +1,12 @@
 /* IMPORTATION DES POLICES */
 @font-face {
   font-family: "Qbicle";
-  src: url("../fonts/Qbicle1BRKMK.ttf") format("truetype");
+  src: url("../assets/fonts/Qbicle1BRKMK.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Fugaz One";
-  src: url("../fonts/FugazOne-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/FugazOne-Regular.ttf") format("truetype");
 }
 
 @media (max-width: 768px) {
