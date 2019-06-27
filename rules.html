@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+  <title>Règles du jeu | GuessR</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/scatterchart.css">
+  <link rel="stylesheet" href="css/nv.d3.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
+  <script src="js/d3.min.js"></script>
+  <script src="js/nv.d3.min.js"></script>
+  <script src="js/multivariate-normal.min.js"></script>
+  <script src="js/game-explanation.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p id="small-menu" class="text-right"><a href="menu.html">Menu</a></p>
+        <h1>Règles du jeu</h1>
+        <h2>Fonctionnement du jeu</h2>
+        <p>
+          Vous commencez avec 3 cœurs. Vous pouvez avoir 4 cœurs au maximum. Lorsque vous n'avez plus de
+          cœur, la partie s'arrête. Votre but est de récupérer le plus d'étoiles possible !
+        </p>
+        <ul>
+          <li>
+            Si vous devinez exactement la vraie valeur de corrélation : +2 <i class="fa fa-heart"></i> et +10
+            <i class="fa fa-star"></i>
+          </li>
+          <li>
+            Si vous devinez à moins de 0,05 de la vraie valeur de corrélation : + 1 <i class="fa fa-heart"></i> et +5
+            <i class="fa fa-star"></i>
+          </li>
+          <li>
+            Si vous devinez à moins de 0,10 de la vraie valeur de corrélation : +1 <i class="fa fa-star"></i><br>
+          </li>
+          <li>
+            Si vous devinez à plus de 0,10 de la vraie valeur de corrélation : -1 <i class="fa fa-heart"></i>
+          </li>
+        </ul>
+        <p>
+          Vous recevez également des étoiles bonus si vous faites plusieurs bonnes réponses à la suite !
+        </p>
+        <h2>Explications</h2>
+        <p>
+          Le but du jeu est simple. Votre objectif est de deviner
+          <strong><a href="https://fr.wikipedia.org/wiki/Corrélation_(statistiques)" target="_blank">la corrélation
+              entre deux variables à l'aide d'un nuage de points</a></strong>.
+          Plus votre hypothèse est proche de la vraie valeur de corrélation, plus vous gagnez de points.
+        </p>
+        <p>
+          Votre estimation doit être comprise entre 0 et 1.<br>
+          Une valeur égale à 0 signifie qu'il n'existe aucune corrélation entre les deux séries tandis qu'une valeur
+          égale à 1 signifie que la corrélation est parfaite.<br>
+        </p>
+        <div class="table-responsive">
+          <table id="examples">
+            <tr>
+              <td>R = 0.0
+                <div id="example1">
+                  <svg></svg>
+                </div>
+              </td>
+              <td>R = 0.25
+                <div id="example2">
+                  <svg></svg>
+                </div>
+              </td>
+              <td>R = 0.5
+                <div id="example3">
+                  <svg></svg>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>R = 0.75
+                <div id="example4">
+                  <svg></svg>
+                </div>
+              </td>
+              <td>R = 0.90
+                <div id="example5">
+                  <svg></svg>
+                </div>
+              </td>
+              <td>R = 1.0
+                <div id="example6">
+                  <svg></svg>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

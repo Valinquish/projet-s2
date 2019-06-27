@@ -1,0 +1,79 @@
+/* IMPORTATION DES POLICES */
+@font-face {
+  font-family: "Qbicle";
+  src: url("../fonts/Qbicle1BRKMK.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Fugaz One";
+  src: url("../fonts/FugazOne-Regular.ttf") format("truetype");
+}
+
+@media (max-width: 768px) {
+  body {
+    background: #348f50 !important;
+  }
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(to right, #348f50, #56b4d3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CONTENU DU MENU */
+#main-menu {
+  text-align: right;
+}
+
+#main-menu a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (min-width: 1000px) and (max-height: 1000px) {
+  #logo {
+    font-size: 110px !important;
+  }
+
+  span {
+    font-size: 80px !important;
+  }
+}
+
+#logo {
+  text-align: left;
+  font-family: 'Qbicle';
+  font-size: 150px;
+  cursor: default;
+}
+
+#logo .easterEgg {
+  cursor: help;
+  text-decoration: none;
+}
+
+span {
+  font-family: 'Fugaz One', cursive;
+  font-weight: bolder;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 100px;
+  transform: skewY(-7deg);
+  transition: transform 1.5s;
+  line-height: 2em;
+}
+
+span:hover {
+  color: white;
+  text-shadow:
+    3px 3px 0 #000,
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  transform: skewY(0deg);
+  transition: transform 1.5s;
+}

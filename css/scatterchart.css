@@ -1,0 +1,58 @@
+#examples {
+  text-align: center;
+  font-weight: bold;
+}
+
+#examples svg {
+  margin: 0px;
+  padding: 0px;
+  height: 350px;
+  width: 350px;
+  margin-left: -13px;
+}
+
+#correlatedChart svg {
+  margin: 0px;
+  padding: 0px;
+  height: 500px;
+  width: 500px;
+  margin-left: -13px;
+}
+
+
+@media (max-width: 768px) {
+  #correlatedChart svg {
+    margin: 0px;
+    padding: 0px;
+    height: 350px;
+    width: 350px;
+    margin-left: -13px;
+  }
+}
+
+@media (max-width: 350px) {
+  #correlatedChart svg {
+    margin: 0px;
+    padding: 0px;
+    height: 300px;
+    width: 300px;
+    margin-left: -13px;
+  }
+}
+
+
+/*
+.nv-group {
+  stroke: black;
+  fill: black;
+  fill-opacity: 0.75 !important;
+}
+
+.tick line {
+  stroke-width: 3;
+  stroke: #F1F1F1 !important;
+}
+
+.domain {
+  opacity: 0;
+}*/

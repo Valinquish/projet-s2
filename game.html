@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+  <title>Can you guess the true value of R? | GuessR</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/scatterchart.css">
+  <link rel="stylesheet" href="css/nv.d3.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
+  <script src="js/d3.min.js"></script>
+  <script src="js/nv.d3.min.js"></script>
+  <script src="js/multivariate-normal.min.js"></script>
+  <script src="js/game.js"></script>
+</head>
+
+<body>
+  <div id="game" class=" container">
+    <div class="row">
+      <div id="rebirth" class="col">
+        <span><i id="life1" class="fa fa-heart"></i></span>
+        <span><i id="life2" class="fa fa-heart"></i></span>
+        <span><i id="life3" class="fa fa-heart"></i></span>
+        <span><i id="life4" class="fa fa-heart-o"></i></span><br>
+        <span><i class="fa fa-star"></i></span>
+        <span id="score">0</span>
+      </div>
+      <p id="small-menu" class="text-right">
+        <span><a onclick="redirectToMenu()">Menu</a></span><br>
+        <span><a onclick="redirectToRules()" title="Règles du jeu"><i class="fa fa-info-circle"></i></a></span>
+      </p>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div id="correlatedChart" class="with-3d-shadow with-transitions">
+          <svg></svg>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-row">
+          <div class="col">
+            <div class="input-group">
+              <input type="number" id="guessedR" class="form-control" onkeydown="checkKeyPress()" value="0.0" min="0"
+                max="1" step="0.01">
+            </div>
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-secondary" onclick="checkAnswer()"><i class="fa fa-lightbulb-o"></i></button>
+          </div>
+        </div>
+
+        <h5 id="replyText"></h5>
+        <p id="healthRecap"></p>
+        <p id="starRecap"></p>
+        Série de bonnes réponses : <span id="streak">0</span><br>
+        Erreur moyenne : <span id="meanError">0.00</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="game-over" class="container" hidden>
+    <div class="row">
+      <div id="game-over-logo" class="row mx-auto">
+        Game Over
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="mx-auto">
+        <p id="result" class="text-center"></p>
+        <form name="userScore" method="post" action="php/score.php">
+          <div class="form-row align-items-center">
+            <div class="col">
+              <label class="sr-only" for="userName">Pseudo</label>
+              <div class="input-group">
+                <input type="text" class="form-control" name="userName" placeholder="Pseudo" minlength="3"
+                  maxlength="32">
+              </div>
+            </div>
+            <div class="col-auto">
+              <input type="text" class="form-control" name="userScore" hidden>
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-secondary">Envoyer</button>
+            </div>
+          </div>
+        </form>
+        <p></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div id="small-menu" class="mx-auto">
+        <span><a href="game.html">Rejouer</a></span>
+        <span><a href="menu.html">Menu</a></span>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
